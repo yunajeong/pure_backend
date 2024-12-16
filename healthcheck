@@ -1,0 +1,16 @@
+const express = require('express');
+const app = express();
+
+app.get('/health', (req, res) => {
+  const isHealthy = true;
+
+  if (isHealthy) {
+    res.status(200).send('Healthy');
+  } else {
+    res.status(500).send('Unhealthy');
+  }
+});
+
+app.listen(3000, () => {
+  console.log('서버가 실행되었습니다.');
+});
